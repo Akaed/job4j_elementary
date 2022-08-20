@@ -40,4 +40,15 @@ public class PointTest {
         Assert.assertEquals(expected, out, 0.01);
     }
 
+    @Test
+    public void when20to70then5() {
+        int in = 2;
+        int in1 = 0;
+        int in2 = 7;
+        int in3 = 0;
+        double expected = 5;
+        double out = Point.distance(in, in1, in2, in3);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
 }
