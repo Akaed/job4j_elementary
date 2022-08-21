@@ -7,8 +7,6 @@ public class DummyBot {
             rsl = "Hi, SmartAss.";
         } else if ("Bye.".equals(question)) {
             rsl = "See you later.";
-        } else {
-            System.out.println("I don't know, Please, ask another question.");
         }
         return rsl;
     }
@@ -18,7 +16,6 @@ public class DummyBot {
         System.out.println(rsl);
         rsl = DummyBot.answer("Bye.");
         System.out.println(rsl);
-        rsl = DummyBot.answer("kek");
     }
 }
 
