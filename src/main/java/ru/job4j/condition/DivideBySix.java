@@ -14,4 +14,5 @@ public class DivideBySix {
         }
         return rsl;
     }
+
 }
