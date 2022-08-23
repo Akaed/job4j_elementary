@@ -16,7 +16,7 @@ public class CounterTest {
     @Test
     public void whenSumEvenNumbersFromOneToTenThenSix() {
         int start = 1;
-        int finish = 100;
+        int finish = 6;
         int result = Counter.sumByEven(start, finish);
         int expected = 12;
         assertThat(result).isEqualTo(expected);
