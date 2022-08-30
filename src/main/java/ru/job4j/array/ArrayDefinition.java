@@ -10,5 +10,6 @@ public class ArrayDefinition {
         for (String name: names) {
             System.out.println(name);
         }
+
     }
 }
