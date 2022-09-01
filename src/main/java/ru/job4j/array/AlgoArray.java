@@ -16,4 +16,5 @@ public class AlgoArray {
             System.out.println(array[index]);
         }
     }
+
 }
