@@ -38,7 +38,7 @@ public class FindLoopTest {
     public void whenDiapasonHas10Then2() {
         int[] data = new int[] {5, 2, 10, 2, 4};
         int el = 10;
-        int start = 10;
+        int start = 1;
         int finish = 4;
         int result = FindLoop.indexInRange(data, el, start, finish);
         int expected = 2;
