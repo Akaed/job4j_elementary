@@ -39,4 +39,5 @@ public class MachineTest {
         int[] expected = {10, 5, 2, 1};
         assertThat(result).containsExactly(expected);
     }
+
 }
