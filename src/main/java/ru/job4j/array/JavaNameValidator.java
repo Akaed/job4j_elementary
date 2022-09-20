@@ -4,20 +4,27 @@ public class JavaNameValidator {
 
     public static boolean isNameValid(String name) {
         char currentCharacter;
-        boolean numberPresent = false;
-        isSpecialSymbol(name);
-        if (name.isEmpty()) {
-            return false;
-        }
-        isUpperLatinLetter(name);
-        isLowerLatinLetter(name);
+        boolean valide = false;
             for (int i = 0; i < name.length(); i++) {
                 currentCharacter = name.charAt(i);
                 if (Character.isDigit(currentCharacter)) {
-                    numberPresent = true;
+                    valide = true;
+                }
+                if (!(Character.isUpperCase(currentCharacter)) && i == 0 && isLowerLatinLetter(name)) {
+                    valide = true;
+                }
+                if (isSpecialSymbol(name)) {
+                    valide = true;
+                }
+                if (isUpperLatinLetter(name)) {
+                    valide = true;
                 }
             }
-        return false;
+
+        if (name.isEmpty()) {
+            valide = false;
+        }
+        return valide;
     }
 
     public static boolean isSpecialSymbol(String code) {
