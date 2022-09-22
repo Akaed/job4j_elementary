@@ -5,24 +5,13 @@ public class JavaNameValidator {
     public static boolean isNameValid(String name) {
         char currentCharacter;
         boolean valide = false;
-        if (!(name.isEmpty())) {
-            if (isLowerLatinLetter(name.charAt(0))) {
-                for (int i = 1; i < name.length(); i++) {
-                    currentCharacter = name.charAt(i);
-                    if (Character.isDigit(currentCharacter)) {
-                        valide = true;
-                    }
-                    if (isUpperLatinLetter(name.charAt(i))) {
-                        valide = true;
-                    }
-                    if (isLowerLatinLetter(name.charAt(i))) {
-                        valide = true;
-                    }
-                    if (isSpecialSymbol(name.charAt(i))) {
-                        valide = true;
-                    }
-                }
+        for (int i = 1; i < name.length(); i++) {
+            currentCharacter = name.charAt(i);
+            if (name.isEmpty() || !(isLowerLatinLetter(name.charAt(0)))) {
+                valide = false;
+                break;
             }
+            valide = Character.isDigit(currentCharacter) && isUpperLatinLetter(name.charAt(i)) && isLowerLatinLetter(name.charAt(i)) && isSpecialSymbol(name.charAt(i));
         }
         return valide;
     }
