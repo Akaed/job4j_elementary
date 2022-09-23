@@ -8,7 +8,8 @@ public class JavaNameValidator {
         if (isValid) {
             for (int i = 1; i < name.length(); i++) {
                 currentCharacter = name.charAt(i);
-                if (!(Character.isDigit(currentCharacter)) && !(isUpperLatinLetter(currentCharacter)) && !(isSpecialSymbol(currentCharacter)) && !(isLowerLatinLetter(currentCharacter))) {
+                if (!(Character.isDigit(currentCharacter)) && !(isUpperLatinLetter(currentCharacter))
+                        && !(isSpecialSymbol(currentCharacter)) && !(isLowerLatinLetter(currentCharacter))) {
                     isValid = false;
                     break;
                 }
