@@ -4,16 +4,19 @@ public class JavaNameValidator {
 
     public static boolean isNameValid(String name) {
         char currentCharacter;
-        boolean valide = false;
-        for (int i = 1; i < name.length(); i++) {
-            currentCharacter = name.charAt(i);
-            if (name.isEmpty() || !(isLowerLatinLetter(name.charAt(0)))) {
-                valide = false;
-                break;
+        boolean isValid = !name.isEmpty() && isLowerLatinLetter(name.charAt(0));
+        if (isValid) {
+            for (int i = 1; i < name.length(); i++) {
+                currentCharacter = name.charAt(i);
+                if (!(Character.isDigit(currentCharacter)) && !(isUpperLatinLetter(currentCharacter)) && !(isSpecialSymbol(currentCharacter)) && !(isLowerLatinLetter(currentCharacter))) {
+                    isValid = false;
+                    break;
+                }
+
             }
-            valide = Character.isDigit(currentCharacter) && isUpperLatinLetter(name.charAt(i)) && isLowerLatinLetter(name.charAt(i)) && isSpecialSymbol(name.charAt(i));
+
         }
-        return valide;
+        return isValid;
     }
 
     public static boolean isSpecialSymbol(int code) {
